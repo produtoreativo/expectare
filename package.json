@@ -1,10 +1,11 @@
 {
   "name": "expectare",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "private": true,
   "scripts": {
     "android": "react-native run-android",
     "ios": "react-native run-ios",
+    "postversion": "react-native-version",
     "build:android:key": "cd android && keytool -genkey -v -keystore my-release-key.keystore -alias my-key-alias -keyalg RSA -keysize 2048 -validity 10000",
     "build:android:apk": "cd android && ./gradlew assembleRelease",
     "build:android:aab": "react-native build-android --mode=release",
@@ -30,6 +31,7 @@
     "eslint": "^8.19.0",
     "jest": "^29.6.3",
     "prettier": "2.8.8",
+    "react-native-version": "^4.0.0",
     "react-test-renderer": "18.2.0",
     "typescript": "5.0.4"
   },
