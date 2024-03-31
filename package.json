@@ -5,6 +5,9 @@
   "scripts": {
     "android": "react-native run-android",
     "ios": "react-native run-ios",
+    "build:android:key": "cd android && keytool -genkey -v -keystore my-release-key.keystore -alias my-key-alias -keyalg RSA -keysize 2048 -validity 10000",
+    "build:android:apk": "cd android && ./gradlew assembleRelease",
+    "build:android:aab": "react-native build-android --mode=release",
     "lint": "eslint .",
     "start": "react-native start",
     "test": "jest"

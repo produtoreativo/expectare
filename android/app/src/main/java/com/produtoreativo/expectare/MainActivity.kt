@@ -1,4 +1,4 @@
-package com.expectare
+package com.produtoreativo.expectare
 
 import com.facebook.react.ReactActivity
 import com.facebook.react.ReactActivityDelegate
