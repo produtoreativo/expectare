@@ -1,9 +1,9 @@
 import * as React from 'react';
 import { NavigationContainer } from '@react-navigation/native';
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
-import HomeScreen from './src/screens/Home';
-import Settings from './src/screens/Settings';
-import Workspace from './src/screens/Workspace';
+import HomeScreen from '@expectare/screens/Home';
+import Settings from '@expectare/screens/Settings';
+import Workspace from '@expectare/screens/Workspace';
 
 const Tab = createBottomTabNavigator();
 
