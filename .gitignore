@@ -5,6 +5,9 @@
 # VSCode
 .vscode/
 
+# Arquivos de configuração do repo
+android/sentry.properties
+
 # Xcode
 #
 build/

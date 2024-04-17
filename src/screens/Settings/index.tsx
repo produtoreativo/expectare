@@ -1,5 +1,5 @@
 import React from 'react';
-import {View, Text, StyleProp, ViewStyle} from 'react-native';
+import {View, Text, StyleProp, ViewStyle, Button} from 'react-native';
 
 const style: StyleProp<ViewStyle> = {
   flex: 1,
@@ -8,9 +8,14 @@ const style: StyleProp<ViewStyle> = {
 };
 
 function Settings() {
+  function errao() {
+    throw new Error('Sentry');
+  }
+
   return (
     <View style={style}>
       <Text>Settings</Text>
+      <Button title="error" onPress={errao} />
     </View>
   );
 }
