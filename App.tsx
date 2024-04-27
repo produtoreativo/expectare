@@ -6,9 +6,13 @@ import Settings from '@expectare/screens/Settings';
 import Workspace from '@expectare/screens/Workspace';
 import Icon from 'react-native-vector-icons/FontAwesome6';
 import * as Sentry from '@sentry/react-native';
+import {SENTRY_DSN} from '@env';
+
+console.log('Sentry DSN:', SENTRY_DSN);
 
 Sentry.init({
-  dsn: 'https://31a9f08aca14a8608318a87ef2a3ffa7@o4507098805567488.ingest.us.sentry.io/4507098808254464',
+  dsn: SENTRY_DSN,
+  // dsn: 'https://31a9f08aca14a8608318a87ef2a3ffa7@o4507098805567488.ingest.us.sentry.io/4507098808254464',
   // Set tracesSampleRate to 1.0 to capture 100% of transactions for performance monitoring.
   // We recommend adjusting this value in production.
   tracesSampleRate: 1.0,

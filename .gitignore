@@ -5,6 +5,8 @@
 # VSCode
 .vscode/
 
+.env
+
 # Arquivos de configuração do repo
 android/sentry.properties
 
