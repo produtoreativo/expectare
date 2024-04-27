@@ -35,6 +35,9 @@
     "baseUrl": ".",
     "paths": {
       "@expectare/*": ["src/*"],
+      "typeRoots": [
+        "./src/types"
+      ]
     }
   },
   "exclude": [
