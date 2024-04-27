@@ -1,6 +1,6 @@
 import Realm, {BSON, ObjectSchema} from 'realm';
 
-export class Profile extends Realm.Object<Profile> {
+class Profile extends Realm.Object<Profile> {
   _id!: BSON.ObjectId;
   name!: string;
   static schema: ObjectSchema = {
@@ -12,3 +12,5 @@ export class Profile extends Realm.Object<Profile> {
     primaryKey: '_id',
   };
 }
+
+export default Profile;
