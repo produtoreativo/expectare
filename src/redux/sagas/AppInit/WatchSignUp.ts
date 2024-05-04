@@ -30,7 +30,7 @@ function* appSignUp() {
       console.log('realm:', realm);
       const createdProfile = yield call(save, realm, signUp);
       console.log('createdProfile:', createdProfile);
-      put({
+      yield put({
         type: 'SET_PROFILE',
         payload: createdProfile,
       });

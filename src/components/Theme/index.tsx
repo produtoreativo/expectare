@@ -20,6 +20,7 @@ function tabBarIcon(name: string) {
 
 function Theme() {
   const isLogged = useSelector((state: any) => state.isLogged);
+  console.log('Theme isLogged:', isLogged);
   const dispatch = useDispatch();
   console.log('isLogged:', isLogged);
 

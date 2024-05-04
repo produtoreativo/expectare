@@ -14,9 +14,16 @@ function RootReducer(state: any = initialState, action: any) {
   }
   console.log('action:', action);
   switch (action.type) {
+    case 'LOGOUT_SUCCESS':
+      return {
+        ...state,
+        isLogged: false,
+        profile: {},
+      };
     case 'SET_PROFILE':
       return {
         ...state,
+        isLogged: true,
         profile: action.payload,
       };
     case 'SET_EMAIL':

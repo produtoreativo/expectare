@@ -10,7 +10,7 @@ function* appInit() {
     console.log('realm:', realm);
     if (realm) {
       // const result = yield call(realm.objects, 'Profile');
-      const result = realm.objects('Profile');
+      const result = yield realm.objects('Profile');
       console.log('result:', result);
       // 1. Verificar se tem banco local, se não tem manda pra tela de Setup
       // 2. Se tem banco local e não tem Profile, manda pra tela de criar Profile

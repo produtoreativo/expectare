@@ -22,7 +22,7 @@ Sentry.init({
 
 function App(): React.JSX.Element {
   const store = CreateStore();
-
+  console.log('store[2]:', store);
   return (
     <Provider store={store}>
       <Theme />
