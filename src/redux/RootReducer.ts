@@ -1,6 +1,11 @@
 const initialState = {
   isLogged: false,
   profile: {},
+  signUp: {
+    name: '',
+    email: '',
+    errorMessage: '',
+  },
 };
 
 function RootReducer(state: any = initialState, action: any) {
