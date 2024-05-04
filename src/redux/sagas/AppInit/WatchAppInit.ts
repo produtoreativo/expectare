@@ -1,17 +1,16 @@
-import {call, put, takeLatest} from 'redux-saga/effects';
-import Realm from 'realm';
-import ProfileSchema from '@expectare/models/Profile';
-
+import {put, takeLatest, getContext} from 'redux-saga/effects';
 function* appInit() {
   console.log('APP_INIT ********');
 
   try {
-    const realm = yield call(Realm.open, {
-      schema: [ProfileSchema],
-    });
-
+    const realm = yield getContext('realm');
+    // const realm = yield call(Realm.open, {
+    //   schema: [ProfileSchema],
+    // });
+    console.log('realm:', realm);
     if (realm) {
-      const result = yield call(realm.objects, 'Profile');
+      // const result = yield call(realm.objects, 'Profile');
+      const result = realm.objects('Profile');
       console.log('result:', result);
       // 1. Verificar se tem banco local, se não tem manda pra tela de Setup
       // 2. Se tem banco local e não tem Profile, manda pra tela de criar Profile
