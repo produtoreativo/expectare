@@ -10,6 +10,7 @@ import SetupScreen from '@expectare/screens/Setup';
 import Icon from 'react-native-vector-icons/FontAwesome6';
 import {useDispatch, useSelector} from 'react-redux';
 import {TouchableHighlight, View} from 'react-native';
+import {useTranslation} from 'react-i18next';
 
 const Tab = createBottomTabNavigator();
 const Stack = createStackNavigator();
@@ -21,6 +22,8 @@ function tabBarIcon(name: string) {
 }
 
 function WorkspaceStack() {
+  const {t} = useTranslation();
+  const title = t('screen.add.narrative');
   return (
     <Stack.Navigator>
       <Stack.Screen
@@ -34,7 +37,7 @@ function WorkspaceStack() {
         name="AddScreen"
         component={AddScreen}
         options={{
-          title: 'Add Narrative',
+          title,
         }}
       />
     </Stack.Navigator>
@@ -61,6 +64,9 @@ function AddButton(navigation) {
 function Theme() {
   const isLogged = useSelector((state: any) => state.isLogged);
   const dispatch = useDispatch();
+  const {t} = useTranslation();
+
+  console.log('************** TRANSLATE', t('screen.add.narrative'));
 
   React.useEffect(() => {
     dispatch({type: 'APP_INIT'});

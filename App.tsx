@@ -4,6 +4,7 @@ import {SENTRY_DSN} from '@env';
 import {Provider} from 'react-redux';
 import CreateStore from '@expectare/redux/CreateStore';
 import Theme from '@expectare/components/Theme';
+import '@expectare/i18n';
 
 console.log('Sentry DSN:', SENTRY_DSN);
 
