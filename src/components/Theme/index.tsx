@@ -5,9 +5,11 @@ import {createStackNavigator} from '@react-navigation/stack';
 import HomeScreen from '@expectare/screens/Home';
 import Settings from '@expectare/screens/Settings';
 import Workspace from '@expectare/screens/Workspace';
+import AddScreen from '@expectare/screens/Narrative/Add';
 import SetupScreen from '@expectare/screens/Setup';
 import Icon from 'react-native-vector-icons/FontAwesome6';
 import {useDispatch, useSelector} from 'react-redux';
+import {Text, TouchableHighlight, View} from 'react-native';
 
 const Tab = createBottomTabNavigator();
 const Stack = createStackNavigator();
@@ -18,11 +20,43 @@ function tabBarIcon(name: string) {
   );
 }
 
+function WorkspaceStack() {
+  return (
+    <Stack.Navigator>
+      <Stack.Screen
+        name="Workspace"
+        component={Workspace}
+        options={{
+          headerShown: false,
+        }}
+      />
+      <Stack.Screen
+        name="AddScreen"
+        component={AddScreen}
+        options={{
+          title: 'Add Narrative',
+        }}
+      />
+    </Stack.Navigator>
+  );
+}
+
+function AddButton(navigation) {
+  return () => (
+    <TouchableHighlight
+      onPress={() => {
+        navigation.navigate('AddScreen', {screen: 'AddScreen'});
+      }}>
+      <View>
+        <Icon name="plus" size={30} color="#000" />
+      </View>
+    </TouchableHighlight>
+  );
+}
+
 function Theme() {
   const isLogged = useSelector((state: any) => state.isLogged);
-  console.log('Theme isLogged:', isLogged);
   const dispatch = useDispatch();
-  console.log('isLogged:', isLogged);
 
   React.useEffect(() => {
     dispatch({type: 'APP_INIT'});
@@ -48,10 +82,11 @@ function Theme() {
           />
           <Tab.Screen
             name="Workspace"
-            component={Workspace}
-            options={{
+            component={WorkspaceStack}
+            options={({navigation}) => ({
               tabBarIcon: tabBarIcon('briefcase'),
-            }}
+              headerRight: AddButton(navigation),
+            })}
           />
           <Tab.Screen
             name="Settings"
