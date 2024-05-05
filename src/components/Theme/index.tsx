@@ -9,7 +9,7 @@ import AddScreen from '@expectare/screens/Narrative/Add';
 import SetupScreen from '@expectare/screens/Setup';
 import Icon from 'react-native-vector-icons/FontAwesome6';
 import {useDispatch, useSelector} from 'react-redux';
-import {Text, TouchableHighlight, View} from 'react-native';
+import {TouchableHighlight, View} from 'react-native';
 
 const Tab = createBottomTabNavigator();
 const Stack = createStackNavigator();
@@ -24,7 +24,7 @@ function WorkspaceStack() {
   return (
     <Stack.Navigator>
       <Stack.Screen
-        name="Workspace"
+        name="WorkspaceScreen"
         component={Workspace}
         options={{
           headerShown: false,
@@ -41,6 +41,10 @@ function WorkspaceStack() {
   );
 }
 
+const buttonStyle = {
+  marginRight: 10,
+};
+
 function AddButton(navigation) {
   return () => (
     <TouchableHighlight
@@ -48,7 +52,7 @@ function AddButton(navigation) {
         navigation.navigate('AddScreen', {screen: 'AddScreen'});
       }}>
       <View>
-        <Icon name="plus" size={30} color="#000" />
+        <Icon name="plus" size={30} color="#FFC107" style={buttonStyle} />
       </View>
     </TouchableHighlight>
   );
