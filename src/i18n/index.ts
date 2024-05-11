@@ -7,6 +7,8 @@ const resources = {
       welcome: 'Welcome 3!',
       greeting: 'Hello, {{name}}!',
       'screen.add.narrative': 'Adicione uma nova Narrativa',
+      'screen.add.narrative.name': 'Nome',
+      'screen.add.narrative.button': 'Cadastrar',
     },
   },
 };
