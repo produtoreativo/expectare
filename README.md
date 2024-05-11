@@ -1,4 +1,7 @@
-# generates release signed APK
-./gradlew assembleRelease
-# generates release signed AAB
-./gradlew bundleRelease
+## Instalar o Firebase 
+
+```
+npm install -g firebase-tools 
+
+firebase login
+```
