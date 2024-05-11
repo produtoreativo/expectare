@@ -9,6 +9,7 @@
 
 # Arquivos de configuração do repo
 android/sentry.properties
+android/app/google-services.json
 
 # Xcode
 #
